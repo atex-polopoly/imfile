@@ -15,7 +15,7 @@ describe file('/etc/rsyslog.d/srv_tomcat_logs_catalina_log.conf') do
   its('content') { should include '$InputFileTag hostname_tomcat_catalina.log'}
   its('content') { should include '$InputFilePersistStateInterval 1000'}
   its('content') { should include '$InputRunFileMonitor'}
-  its('content') { should include 'if $syslogtag == ‘hostname_tomcat_catalina.log’ then @@12341234:1234'}
+  its('content') { should include 'if $syslogtag == \'hostname_tomcat_catalina.log\' then @@12341234:1234'}
 end
 
 describe file('/etc/rsyslog.d/srv_somelog_log.conf') do
@@ -27,5 +27,5 @@ describe file('/etc/rsyslog.d/srv_somelog_log.conf') do
   its('content') { should include '$InputFileTag tag'}
   its('content') { should include '$InputFilePersistStateInterval 20'}
   its('content') { should include '$InputRunFileMonitor'}
-  its('content') { should include 'if $syslogtag == ‘tag’ then @@10:11'}
+  its('content') { should include 'if $syslogtag == \'tag\' then @@10:11'}
 end

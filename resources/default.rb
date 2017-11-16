@@ -1,7 +1,7 @@
 property :path, String, required: true, name_property: true
 property :tag, String, required: true
 property :persist_state_interval, Integer, default: 1000
-property :ip, Integer, required: true
+property :ip, String, required: true
 property :port, Integer, required: true
 
 action :create do
@@ -19,8 +19,8 @@ action :create do
       port: new_resource.port,
       persist_state_interval: new_resource.persist_state_interval
       })
-      owner 'root'
-      group 'root'
-      mode '0644'
+    owner 'root'
+    group 'root'
+    mode '0644'
   end
 end

@@ -8,7 +8,7 @@
 imfile 'test imfile' do
   path '/srv/tomcat/logs/catalina.log'
   tag 'hostname_tomcat_catalina.log'
-  ip 12341234
+  ip '12341234'
   port 1234
 end
 
@@ -16,6 +16,15 @@ imfile 'test imfile' do
   path '/srv/somelog.log'
   tag 'tag'
   persist_state_interval 20
-  ip 10
+  ip '10'
+  port 11
+end
+
+
+imfile_directory '/srv/tomcat/logs/' do
+  files ['/srv/tomcat/logs/file1.log', '/srv/tomcat/logs/file2.log']
+  tag 'tag'
+  persist_state_interval 20
+  ip '10'
   port 11
 end
