@@ -1,0 +1,17 @@
+{
+  "name": "imfile_test",
+  "description": "Installs/Configures imfile_test",
+  "maintainer": "Atex Managed Services",
+  "maintainer_email": "managed-services@atex.com",
+  "license": "All Rights Reserved",
+  "platforms": {},
+  "dependencies": {
+    "imfile": ">= 0.0.0"
+  },
+  "version": "0.1.0",
+  "chef_versions": [
+    [
+      ">= 12.1"
+    ]
+  ]
+}

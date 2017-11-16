@@ -1,9 +1,8 @@
 name 'imfile'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Atex Managed Services'
+maintainer_email 'managed-services@atex.com'
 license 'All Rights Reserved'
-description 'Installs/Configures imfile'
-long_description 'Installs/Configures imfile'
+description 'Provides a resources that creates imfile configurations for Rsyslog'
 version '0.1.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
