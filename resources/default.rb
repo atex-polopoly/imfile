@@ -8,7 +8,6 @@ action :create do
 
   filename = path.gsub('/','_')
   filename = filename.gsub('.','_')
-  filename = filename[1,filename.length]
   template "/etc/rsyslog.d/#{filename}.conf" do
     cookbook 'imfile'
     source 'imfile.erb'
