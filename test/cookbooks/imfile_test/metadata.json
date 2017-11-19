@@ -3,7 +3,7 @@
   "description": "Installs/Configures imfile_test",
   "maintainer": "Atex Managed Services",
   "maintainer_email": "managed-services@atex.com",
-  "license": "All Rights Reserved",
+  "license": "BSD-3-Clause",
   "platforms": {},
   "dependencies": {
     "imfile": ">= 0.0.0"
