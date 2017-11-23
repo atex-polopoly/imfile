@@ -5,3 +5,6 @@ license 'BSD-3-Clause'
 description 'Provides a resources that creates imfile configurations for Rsyslog'
 version '0.1.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
+
+
+depends 'manage_services'

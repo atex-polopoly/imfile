@@ -6,7 +6,7 @@
 # found at http://inspec.io/docs/reference/resources/
 
 
-describe file('/etc/rsyslog.d/srv_tomcat_logs_file1_log.conf') do
+describe file('/etc/rsyslog.d/_srv_tomcat_logs_file1_log.conf') do
   it { should exist }
   it { should be_owned_by 'root' }
   it { should be_grouped_into 'root' }
@@ -18,7 +18,7 @@ describe file('/etc/rsyslog.d/srv_tomcat_logs_file1_log.conf') do
   its('content') { should include 'if $syslogtag == \'file1.tag\' then @@10:11'}
 end
 
-describe file('/etc/rsyslog.d/srv_tomcat_logs_file2_log.conf') do
+describe file('/etc/rsyslog.d/_srv_tomcat_logs_file2_log.conf') do
   it { should exist }
   it { should be_owned_by 'root' }
   it { should be_grouped_into 'root' }

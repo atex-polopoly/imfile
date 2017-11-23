@@ -8,7 +8,8 @@ action :create do
 
   filename = path.gsub('/','_')
   filename = filename.gsub('.','_')
-  template "/etc/rsyslog.d/#{filename}.conf" do
+
+  resource = template "/etc/rsyslog.d/#{filename}.conf" do
     cookbook 'imfile'
     source 'imfile.erb'
     variables({
@@ -22,4 +23,11 @@ action :create do
     group 'root'
     mode '0644'
   end
+
+  manage_services 'rsyslog' do
+    service_action 'restart'
+    delay 10
+    only_if { resource.updated_by_last_action? }
+  end
+
 end
