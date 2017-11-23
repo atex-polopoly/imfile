@@ -24,9 +24,11 @@ action :create do
     mode '0644'
   end
 
-  manage_services 'rsyslog' do
-    service_action 'restart'
-    delay 10
+  ruby_block 'set restart for rsyslog' do
+    block do
+      node['restart']['rsyslog'] = ''
+    end
+  end
     only_if { resource.updated_by_last_action? }
   end
 
