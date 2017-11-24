@@ -26,10 +26,9 @@ action :create do
 
   ruby_block 'set restart for rsyslog' do
     block do
-      node['restart']['rsyslog'] = ''
+      node.normal['restart']['rsyslog'] = ''
     end
-  end
-    only_if { resource.updated_by_last_action? }
+    only_if { resource.updated_by_last_action? && node['restart']['rsyslog'] == nil }
   end
 
 end
