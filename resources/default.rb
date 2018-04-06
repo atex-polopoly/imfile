@@ -6,7 +6,7 @@ property :port, Integer, required: true
 
 action :create do
 
-  filename = path.gsub('/','_')
+  filename = new_resource.path.gsub('/','_')
   filename = filename.gsub('.','_')
 
   resource = template "/etc/rsyslog.d/#{filename}.conf" do

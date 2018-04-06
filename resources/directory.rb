@@ -6,7 +6,7 @@ property :files, Array, required: true
 
 action :create do
 
-  files.each do |file|
+  new_resource.files.each do |file|
     filename = file.split('/').last
     filename = filename.split('.').first
     imfile file do
